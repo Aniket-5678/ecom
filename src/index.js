@@ -28,11 +28,11 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
-app.use(express.static(path.join(__dirname, './frontend/build')));
+app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 // The wildcard route should still be at the end
 app.use('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './frontend/build/index.html'));
+    res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
 });
 
 app.use('/api/v1/auth', authRoutes)
